@@ -17,6 +17,7 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      overflow: hidden;
     }
 
     .container {
@@ -25,9 +26,10 @@
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(255, 192, 203, 0.4);
       text-align: center;
-      max-width: 400px;
+      max-width: 450px;
       width: 90%;
       transition: all 0.3s ease;
+      overflow-y: auto;
     }
 
     h2 {
@@ -92,14 +94,19 @@
       .container {
         width: 95%;
         padding: 15px;
+        max-width: 400px;
       }
 
       h2 {
-        font-size: 18px;
+        font-size: 20px;
       }
 
       button {
         width: 100%;
+      }
+
+      .message {
+        font-size: 16px;
       }
     }
   </style>
@@ -141,9 +148,6 @@
         passwordInput.value = '';
       }
     }
-  </script>
-</body>
-</html>
   </script>
 </body>
 </html>
