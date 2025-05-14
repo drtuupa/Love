@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>نامه عاشقانه</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+    body {
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom, #ffe6ec, #fff5f9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.4);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      transition: all 0.3s ease;
+    }
+
+    h2 {
+      color: #d63384;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ffc0cb;
+      border-radius: 10px;
+      margin-top: 10px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ff80aa;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff6699;
+    }
+
+    .message {
+      margin-top: 20px;
+      color: #444;
+      font-size: 18px;
+      line-height: 1.8;
+      display: none;
+    }
+
+    .heart {
+      font-size: 24px;
+      color: #ff4d88;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>رمزتو وارد کن عزیزم</h2>
+    <input type="password" id="password" placeholder="رمز عبور">
+    <button onclick="checkPassword()">دیدن پیام</button>
+
+    <div id="message" class="message">
+      <p>سلام، بیشتر از ۷ ساله که می‌خوام یه موضوعی رو بهت بگم ولی راستش خجالت می‌کشیدم،</p>
+      <p>ولی این‌بار می‌خوام دلو بزنم به دریا و حداقل با یه نامه بهت بگم.</p>
+      <p>توی تمام این سال‌ها فقط می‌خواستم بگم:</p>
+      <p class="heart"><strong>I love you</strong></p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === "1385") {
+        document.getElementById("message").style.display = "block";
+      } else {
+        alert("رمز اشتباهه عزیزم!");
+      }
+    }
+  </script>
+</body>
+</html>
