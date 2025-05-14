@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>نامه عاشقانه</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
@@ -42,6 +42,11 @@
       margin-top: 10px;
       outline: none;
       font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="password"].error {
+      border-color: red;
     }
 
     button {
@@ -53,10 +58,12 @@
       font-size: 16px;
       border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
       background-color: #ff6699;
+      transform: scale(1.1);
     }
 
     .message {
@@ -72,6 +79,28 @@
       color: #ff4d88;
       margin-top: 10px;
     }
+
+    #error-message {
+      color: red;
+      font-size: 14px;
+      display: none;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 95%;
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -80,21 +109,32 @@
     <input type="password" id="password" placeholder="رمز عبور">
     <button onclick="checkPassword()">دیدن پیام</button>
 
+    <div id="error-message">رمز اشتباهه عزیزم!</div>
+
     <div id="message" class="message">
-      <p>سلام، بیشتر از ۷ ساله که می‌خوام یه موضوعی رو بهت بگم ولی راستش خجالت می‌کشیدم،</p>
-      <p>ولی این‌بار می‌خوام دلو بزنم به دریا و حداقل با یه نامه بهت بگم.</p>
-      <p>توی تمام این سال‌ها فقط می‌خواستم بگم:</p>
-      <p class="heart"><strong>I love you</strong></p>
+      <p>سلام،</p>
+      <p>مدت‌هاست که حرفی دارم که همیشه توی دلم مونده...</p>
+      <p>چند ساله که در سکوت این احساسات رو به دل دارم...</p>
     </div>
+
+    <div class="heart">❤️</div> 
   </div>
 
   <script>
     function checkPassword() {
       const input = document.getElementById("password").value;
+      const errorMessage = document.getElementById("error-message");
+      const message = document.getElementById("message");
+      const passwordInput = document.getElementById("password");
+
       if (input === "1385") {
-        document.getElementById("message").style.display = "block";
+        message.style.display = "block";
+        errorMessage.style.display = "none";
+        passwordInput.classList.remove("error");
       } else {
-        alert("رمز اشتباهه عزیزم!");
+        errorMessage.style.display = "block";
+        passwordInput.classList.add("error");
+        passwordInput.value = '';
       }
     }
   </script>
