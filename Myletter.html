@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>نامه</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom, #e0f7ff, #f5fcff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 128, 255, 0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    h2 {
+      color: #007acc;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #90caf9;
+      border-radius: 10px;
+      margin-top: 10px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #2196f3;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1976d2;
+    }
+
+    .message {
+      margin-top: 20px;
+      color: #333;
+      font-size: 17px;
+      line-height: 2;
+      display: none;
+      text-align: right;
+    }
+
+    @media (max-height: 500px) {
+      .container {
+        height: 100vh;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>رمز را وارد کنید</h2>
+    <input type="password" id="password" placeholder="رمز عبور">
+    <button onclick="checkPassword()">دیدن پیام</button>
+
+    <div id="message" class="message">
+      <p>سلام،</p>
+      <p>راستش نمی‌دونم از کجا شروع کنم... فقط می‌دونم که مدت‌هاست یه چیزی توی دلمه که هیچ‌وقت جرات نکردم بهت بگم. هر بار که خواستم حرف بزنم، خجالت کشیدم... ترسیدم شاید خرابش کنم... اما این حس هیچ‌وقت از بین نرفت.</p>
+      <p>توی این چند سال، هر جا که بودم، هر کاری که می‌کردم، یه گوشه‌ی ذهنم همیشه به تو فکر می‌کرد. اون‌قدری که گاهی خودم تعجب می‌کردم چرا هنوزم مثل روز اول برام مهمی... شاید حتی بیشتر از قبل.</p>
+      <p>من هیچ‌وقت دنبال کلمه‌های قشنگ یا دیالوگ‌های خاص نبودم. فقط خواستم بدونی که این حس واقعی بوده... هست... و نمی‌تونستم دیگه توی دلم نگهش دارم. این نامه رو نوشتم چون رودررو گفتنش برام سخت بود، چون قلبم می‌لرزید وقتی تصور می‌کردم بهت بگم.</p>
+      <p>نمی‌دونم آینده چی می‌شه... نمی‌دونم تو چی فکر می‌کنی... فقط خواستم بدونی که توی دلم یه جای خاص داری. همیشه داشتی.</p>
+      <p>و آخرش فقط می‌خوام یه چیزو بگم، از ته دل: دوستت دارم.</p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === "1385") {
+        document.getElementById("message").style.display = "block";
+      } else {
+        alert("رمز اشتباهه!");
+      }
+    }
+  </script>
+</body>
+</html>
