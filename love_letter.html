@@ -10,14 +10,9 @@
     body {
       direction: rtl;
       margin: 0;
-      padding: 0;
+      padding: 20px;
       font-family: 'Vazirmatn', sans-serif;
       background: linear-gradient(to bottom, #d0e8ff, #f0f8ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
     }
 
     .container {
@@ -26,10 +21,8 @@
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(100, 149, 237, 0.4);
       text-align: center;
-      max-width: 450px;
-      width: 90%;
-      transition: all 0.3s ease;
-      overflow-y: auto;
+      max-width: 500px;
+      margin: 40px auto;
     }
 
     h2 {
@@ -75,6 +68,7 @@
       font-size: 18px;
       line-height: 1.8;
       display: none;
+      text-align: justify;
     }
 
     #error-message {
@@ -87,16 +81,11 @@
     @media (max-width: 600px) {
       .container {
         width: 95%;
-        padding: 15px;
-        max-width: 400px;
+        padding: 20px;
       }
 
       h2 {
         font-size: 20px;
-      }
-
-      button {
-        width: 100%;
       }
 
       .message {
